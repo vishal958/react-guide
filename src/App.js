@@ -1,7 +1,7 @@
 import React ,{ Component } from "react";
 import './App.css'
 import Persons from './Persons/Persons'
-import Radium from 'radium'
+import Radium,{StyleRoot} from 'radium'
 
 // const App = props =>{
 //     const [personsState, setPersonsState] = useState({
@@ -128,11 +128,13 @@ class App extends Component{
 
 
         return(
+        <StyleRoot>
             <div className ="App">
                 <p className ={classes.join(' ')}>This is working</p>
                 <button style ={ style }onClick ={this.togglePersonHAndler }> Toggle Person </button>
                 { persons}
             </div>
+            </StyleRoot>
         );
     }
 }
