@@ -7,6 +7,12 @@ const Person =(props) =>{
             width:'450px'
         }
     }
+
+    const rand = Maths.radom()
+    if(rand > 0.7){
+        throw new Error('Something Went Wrong')
+    }
+
     return(
         <div className="Person">
             <p onClick = {props.click}>Hello my name {props.name} and age is {props.age}</p>
