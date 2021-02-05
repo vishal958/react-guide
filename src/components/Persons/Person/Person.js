@@ -2,7 +2,7 @@ import Radium from 'radium'
 import './Person.css'
 
 const Person =(props) =>{
-
+    console.log('Person js rendering')
     return(
         <div className="Person">
             <p onClick = {props.click}>Hello my name {props.name} and age is {props.age}</p>

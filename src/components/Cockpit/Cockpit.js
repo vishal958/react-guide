@@ -22,7 +22,6 @@ const Cockpit = (props) => {
                 color: 'black'
             }
     }
-
     if(props.persons.length <= 2){
         classes.push('red')
     }
@@ -32,7 +31,7 @@ const Cockpit = (props) => {
 
     return(
         <div>
-            <p className ={ classes.join(' ')}>This is working</p>
+            <p className ={ classes.join(' ')}>{ props.title }</p>
             <button style ={ style } onClick ={props.clicked }> Toggle Person </button>
         </div>
     )

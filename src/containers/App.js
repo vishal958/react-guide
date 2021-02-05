@@ -36,6 +36,12 @@ import Cockpit from '../components/Cockpit/Cockpit'
 // export default App
 
 class App extends Component{
+
+    constructor(props){
+        super(props)
+        console.log('App js constructor')
+    }
+
     state ={
         persons: [
             { name:'Vishal1', age:24, id: '1dede' },
@@ -44,6 +50,17 @@ class App extends Component{
         ],
         otherState :'other state',
         showState: false
+    }
+
+    static getDerivedStateFromProps(props,state){
+        console.log('App js Derived state from Props',props)
+        return state
+    }
+    componentWillMount(){
+        console.log('App.js component will mount')
+    }
+    componentDidMount(){
+       console.log('App.js component did mount')
     }
     switchNameHandler = (newName)=>{
         console.log('Clicked')
@@ -84,6 +101,7 @@ class App extends Component{
         this.setState({persons: persons})
     }
     render(){
+        console.log('App.js render')
         let persons = null
         if(this.state.showState){
             persons =(
@@ -99,6 +117,7 @@ class App extends Component{
         return(
             <div className ="App">
                 <Cockpit
+                    title = { this.props.appTitle }
                     clicked = {this.togglePersonHAndler}
                     showPersons = {this.state.showState}
                     persons ={ this.state.persons }
