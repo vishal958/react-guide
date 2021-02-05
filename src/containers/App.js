@@ -56,12 +56,15 @@ class App extends Component{
         console.log('App js Derived state from Props',props)
         return state
     }
-    componentWillMount(){
-        console.log('App.js component will mount')
-    }
+
+    // componentWillMount(){
+    //     console.log('App.js component will mount')
+    // }
+
     componentDidMount(){
        console.log('App.js component did mount')
     }
+
     switchNameHandler = (newName)=>{
         console.log('Clicked')
         this.setState ({

@@ -1,16 +1,17 @@
+import React ,{ Component } from "react";
 import Radium from 'radium'
 import './Person.css'
 
-const Person =(props) =>{
-    console.log('Person js rendering')
-    return(
-        <div className="Person">
-            <p onClick = {props.click}>Hello my name {props.name} and age is {props.age}</p>
-            <p>{props.children}</p>
-            <input type= 'text'  onChange={props.nameChange} value={props.name} />
-        </div>
-    );
-
-
+class Person extends Component {
+    render(){
+        console.log('Person js rendering')
+        return(
+            <div className="Person">
+                <p onClick = {this.props.click}>Hello my name {this.props.name} and age is {this.props.age}</p>
+                <p>{this.props.children}</p>
+                <input type= 'text'  onChange={this.props.nameChange} value={this.props.name} />
+            </div>
+        );
+    }
 }
 export default Radium(Person)
