@@ -5,7 +5,7 @@ const Layout = (props) => {
     return (
         <Aux>
             <div>
-             Tool bar
+
             </div>
             <main>
                 {props.children}
