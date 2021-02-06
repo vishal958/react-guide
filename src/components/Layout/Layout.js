@@ -1,5 +1,5 @@
 import React from 'react'
-import Aux from '../../HigherOrderComponent/auxilary'
+import Aux from '../../HigherOrderComponent/Auxilary'
 
 const Layout = (props) => {
     return (
