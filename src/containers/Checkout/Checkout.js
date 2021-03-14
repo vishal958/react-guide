@@ -11,16 +11,16 @@ export default class Checkout extends Component {
             cheese: 1,
             beacon: 1
         },
-        totalPrice:0
+        totalPrice: 0
     }
     componentDidMount() {
         const query = new URLSearchParams(this.props.location.search)
         const ingredients = {}
-        let price =0
+        let price = 0
         for (let param of query.entries()) {
-            if(param[0] == 'price'){
+            if (param[0] == 'price') {
                 price = param[1]
-            }else{
+            } else {
                 ingredients[param[0]] = +param[1]
             }
 
@@ -47,7 +47,7 @@ export default class Checkout extends Component {
                     checkoutContinued={this.checkoutContinued}
                 />
                 <Route path={this.props.match.path + '/contact-data'}
-                    render={() => (<ContactData totalPrice = {this.state.totalPrice} ingredients={this.state.ingredients} />)} />
+                    render={(props) => (<ContactData totalPrice={this.state.totalPrice} ingredients={this.state.ingredients} {...props} />)} />
             </div>
         )
     }

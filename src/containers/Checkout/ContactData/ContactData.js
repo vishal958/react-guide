@@ -20,12 +20,12 @@ export default class ContactData extends Component {
         this.setState({
             loading: true
         })
-        const order ={
-            ingredients :this.state.ingredients,
+        const order = {
+            ingredients: this.props.ingredients,
             price: this.props.totalPrice,
             customer: {
                 name: 'Vishal',
-                address:{
+                address: {
                     street: 'Valsad',
                     zipCode: '396170',
                     country: 'India'
@@ -35,18 +35,19 @@ export default class ContactData extends Component {
             deliveryMethod: 'fastest'
         }
         axios.post('/orders.json', order)
-        .then(
-            this.setState({
-                loading :false,
-                purchasing:false
-            })
-        )
-        .catch(
-            this.setState({
-                loading :false,
-                purchasing:false
-            })
-        )
+            .then(response => {
+                this.setState({
+                    loading: false,
+                })
+                this.props.history.push('/')
+            }
+
+            )
+            .catch(
+                this.setState({
+                    loading: false,
+                })
+            )
     }
     render() {
         return (
